@@ -11,5 +11,10 @@ class HotspotController < ApplicationController
     @linkloginonly = params["link-login-only"]
     @linkorigesc   = params["link-orig-esc"]
     @macesc        = params["mac-esc"]
+
+    respond_to do |format|
+      format.html # show.html.erb
+    end
+
   end
 end
