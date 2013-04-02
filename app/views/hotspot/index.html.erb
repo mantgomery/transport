@@ -1,13 +1,25 @@
-<form id="loginForm" action="$(link-login-only)" method="post">
+<script type="text/javascript">
+    <!--
+    function doLogin() {
+        document.sendin.username.value = document.login.username.value;
+        document.sendin.password.value = hexMD5('\254' + document.login.password.value + '\216\235\040\140\070\326\060\232\232\377\101\162\102\210\131\301');
+        document.sendin.submit();
+        return false;
+    }
+    //-->
+</script>
+
+<form name="sendin" id="loginForm" action="" method="post" onSubmit="return doLogin()">
+  <input type="hidden" name="popup" value="true" />
 
   <div class="field">
     <label>Имя пользователя:</label>
-    <div class="input"><input type="text" name="" value="" id="login" /></div>
+    <div class="input"><input type="text" name="username" value="" id="login" /></div>
   </div>
 
   <div class="field">
     <label>Пароль:</label>
-    <div class="input"><input type="password" name="" value="" id="pass" /></div>
+    <div class="input"><input type="password" name="password" value="" id="pass" /></div>
   </div>
 
   <div class="submit">
