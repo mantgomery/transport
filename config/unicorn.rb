@@ -1,7 +1,9 @@
-if ENV["RAILS_ENV"] == "development"
-	worker_processes 1
-else
-	worker_processes 3
-end
+root = "/home/deployer/apps/transport/current"
+working_directory root
+pid "#{root}/tmp/pids/unicorn.pid"
+stderr_path "#{root}/log/unicorn.log"
+stdout_path "#{root}/log/unicorn.log"
 
+listen "/tmp/unicorn.transport.sock"
+worker_processes 2
 timeout 30
